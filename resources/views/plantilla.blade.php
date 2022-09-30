@@ -40,7 +40,10 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="" class="nav-link">Inicio</a>
+                    <a href=" {{route('principal')}} " class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="" class="nav-link">Perfil</a>
                 </li>
             </ul>
         </nav>
@@ -63,6 +66,7 @@
                 </div>
 
                 <!-- Sidebar Menu -->
+                <!-- Equipos -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
@@ -71,7 +75,7 @@
                        
                         <li class="nav-item">
                             <a href="#" class="nav-link ">
-                                <i class="fas fa-fw fa-tags"></i>
+                                <i class="fas fa-w fa-laptop"></i>
                                 <p>
                                     Equipos
                                     <i class="right fas fa-angle-left"></i>
@@ -93,11 +97,11 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>  
-                        <!-- componentes -->
-                        <li class="nav-item">
+                        </li> 
+                         <!-- componentes -->
+                         <li class="nav-item">
                             <a href="#" class="nav-link ">
-                                <i class="fas fa-fw fa-tags"></i>
+                                <i class="fas fa-fw fa-desktop"></i> 
                                 <p>
                                     Componentes
                                     <i class="right fas fa-angle-left"></i>
@@ -106,20 +110,85 @@
                             <ul class="nav nav-treeview">
                               
                                 <li class="nav-item">
-                                    <a href="" class="nav-link">
+                                    <a href="{{ route('componentes.registro') }}" class="nav-link">
                                         <i class="fas fa-fw fa-pen"></i>
                                         <p>Registro</p>
                                     </a>
                                 </li>
                                
                                 <li class="nav-item">
-                                    <a href="" class="nav-link ">
+                                    <a href="{{ route('componentes.list') }}" class="nav-link ">
                                         <i class="fas fa-fw fa-clipboard-list"></i>
                                         <p>Listado de Componentes</p>
                                     </a>
                                 </li>
                             </ul>
-                        </li>  
+                        </li> 
+                        <!-- Accesorios -->
+                        <li class="nav-item">
+                            <a href="#" class="nav-link ">
+                                <i class="fas fa-fw fa-keyboard"></i> 
+                                <p>
+                                    Accesorios
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                              
+                                <li class="nav-item">
+                                    <a href="{{ route('accesorios.registro') }}" class="nav-link">
+                                        <i class="fas fa-fw fa-pen"></i>
+                                        <p>Registro</p>
+                                    </a>
+                                </li>
+                               
+                                <li class="nav-item">
+                                    <a href="{{ route('accesorios.list') }}" class="nav-link ">
+                                        <i class="fas fa-fw fa-clipboard-list"></i>
+                                        <p>Listado de Accesorios</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>   
+                        <!-- compras -->
+                        <li class="nav-item">
+                            <a href="#" class="nav-link ">
+                                <i class="fas fa-fw fa-shopping-cart"></i> 
+                                <p>
+                                    Ventas
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                              
+                                <li class="nav-item">
+                                    <a href="{{ route('compras.registro') }}" class="nav-link">
+                                        <i class="fas fa-fw fa-pen"></i>
+                                        <p>Registro de cliente</p>
+                                    </a>
+                                </li>
+                               
+                                <li class="nav-item">
+                                    <a href="{{ route('compras.list') }}" class="nav-link ">
+                                        <i class="fas fa-fw fa-clipboard-list"></i>
+                                        <p>Listado de clientes</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href=" {{ route('detalle.factura') }} " class="nav-link ">
+                                        <i class="fas fa-fw fa-clipboard-list"></i>
+                                        <p>Detalle Factura</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li> 
+                        <li class="nav-item">
+                        <a href="{{ route('logout')}}" class="nav-link">
+                        <i class="nav-icon fas fa-power-off"></i>
+                        <p>Salir</p>
+                        </a>
+                        </li>
+
                 </nav>
                 <!-- /.sidebar-menu -->
             </div>
@@ -136,19 +205,12 @@
             @yield('contenido')
 
 
-
+        
 
 
         </div>
         <!-- /.content-wrapper -->
-        <footer class="main-footer">
-            <strong>Copyright &copy; 2022  </strong>
-            / Ejemplo
-
-            <div class="float-right d-none d-sm-inline-block">
-                <b>Todos los derechos reservados.</b>
-            </div>
-        </footer>
+     
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
